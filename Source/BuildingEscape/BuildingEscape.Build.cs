@@ -7,7 +7,10 @@ public class BuildingEscape : ModuleRules
 	public BuildingEscape(ReadOnlyTargetRules Target) : base(Target)
 	{
 		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
-	
+
+        //bUseUnityBuild = false;
+        //bUsePCHFiles = false;
+
 		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore" });
 
 		PrivateDependencyModuleNames.AddRange(new string[] {  });

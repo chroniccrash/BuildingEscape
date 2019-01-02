@@ -21,20 +21,34 @@ void UPositionReport::BeginPlay()
 	Super::BeginPlay();
 
 	AActor* currentOwner;
+	FVector currentLocation;
 	currentOwner = GetOwner();
+	currentLocation = currentOwner->GetActorLocation();
+	
+	UE_LOG(LogTemp, 
+		   Warning, 
+		   TEXT("PositionReport(%s): %s"), 
+		   *currentOwner->GetName(),
+		   *currentOwner->GetActorLocation().ToString()
+		   );
 
-	FString itemObject = currentOwner->GetName();
-	UE_LOG(LogTemp, Warning, TEXT("PositionReport reporting for duty on %s"), *itemObject);
+
+
+
+	//UE_LOG(LogTemp, Warning, TEXT("PositionReport(%s): X=%f, Y=%f, Z=%f"), *currentOwner->GetName(), currentLocation.X, currentLocation.Y, currentLocation.Z);
 	// ...
 	
 }
-
 
 // Called every frame
 void UPositionReport::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
 {
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
+	
+	
 
+
+	
 	// ...
 }
 
